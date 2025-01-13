@@ -3,22 +3,22 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Advanced To-Do List</title>
+  <title>Advanced To-Do List with Notifications</title>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
 <body class="bg-gray-100 min-h-screen flex items-center justify-center">
   <div class="bg-white shadow-lg rounded-lg p-6 max-w-md w-full">
-    <h1 class="text-2xl font-bold text-center mb-4">Advanced To-Do List</h1>
-    
+    <h1 class="text-2xl font-bold text-center mb-4">Enhanced To-Do List</h1>
+
     <!-- Task Input -->
     <div class="flex mb-4">
       <input id="task-input" type="text" placeholder="Add a new task..." 
-        class="flex-grow px-4 py-2 border rounded-l-md focus:outline-none">
+        class="flex-grow px-4 py-2 border rounded-l-md focus:outline-none focus:ring-2 focus:ring-blue-300">
       <button id="add-task" 
-        class="bg-blue-500 hover:bg-blue-700 text-white px-4 py-2 rounded-r-md">Add</button>
+        class="bg-blue-500 hover:bg-blue-700 text-white px-4 py-2 rounded-r-md transition duration-300">Add</button>
     </div>
-    
+
     <!-- Filters -->
     <div class="flex justify-around mb-4">
       <button class="filter-btn bg-gray-200 hover:bg-gray-300 px-4 py-2 rounded" data-filter="all">All</button>
@@ -29,11 +29,16 @@
     <!-- Task List -->
     <ul id="task-list" class="space-y-2"></ul>
 
-    <!-- Clear All -->
+    <!-- Clear All and Counter -->
     <div class="flex justify-between items-center mt-4">
       <span id="task-count" class="text-sm text-gray-600">0 tasks remaining</span>
       <button id="clear-tasks" class="bg-red-500 hover:bg-red-700 text-white px-4 py-2 rounded">Clear All</button>
     </div>
+  </div>
+
+  <!-- Toast Notifications -->
+  <div id="toast" class="hidden fixed top-4 right-4 bg-green-500 text-white px-4 py-2 rounded shadow-lg">
+    Notification
   </div>
 
   <script src="todo-list.js"></script>
